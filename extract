@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+if [$# -eq 2]
+	echo "Supply two arguments."
+	echo "Usage: ./extract <file or directory to parse> <output filename prefix>"
+	echo "example: ./extract /home/jsoup jsoup will output a file called jsoup_output.txt"
+fi
+
+
+javac -cp "javaparser.jar:." IdentifierPrinter.java
+
+java -cp "javaparser.jar:." IdentifierPrinter $1 > "$2_output.txt"
