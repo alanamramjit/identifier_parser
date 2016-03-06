@@ -2,7 +2,7 @@
 
 set +e
 
-if [ $# -lt 2 ]
+if [ $# -eq 2 ]
 then
 	echo "Supply two arguments."
 	echo "Usage: ./extract <file or directory to parse> <output filename prefix>"
